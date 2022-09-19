@@ -1,57 +1,42 @@
 [
 	{
-		"user_id": "QOJUwfGLfcapLQjX",
+		"user_id": "gJqRAohsv2N7LDHj",
 		"firstname": "Chethan",
 		"lastname": "reddy",
-		"password": "$2b$12$GWnsG7E4wsbcT1njRjV2xuj3Av/4ROkYYmicGnR6sKi65hsj8j9pq",
+		"email": "chethan13@gmail.com",
+		"password": "$2b$12$TOS36UBzlrrS3vO4uw4FtOeOOtM4zUz3QCEmbxZD3UDaJaIxbP1GK",
 		"address": "warangal",
 		"phone": "+917995489094",
-		"email": "chethan@gmail.com",
-		"tasks": [
+		"Tasks": [
 			{
-				"task_id": "6PIJUVuXo7H7N2",
-				"task_name": "app build",
-				"deadline": "2022-09-17T06:41:16.000Z",
-				"isCompletded": false
+				"task_id": "ZlrIrbp475ZsaU",
+				"task_name": "task1",
+				"deadline": "2022-09-19T17:45:13.000Z",
+				"isCompleted": false,
+				"reminders": [
+					"2022-09-19T17:26:02.260Z",
+					"2022-09-19T17:32:25.840Z",
+					"2022-09-19T17:38:49.420Z",
+					"2022-09-19T17:45:13.000Z"
+				]
 			},
 			{
-				"task_id": "EjUNDkQsWCBI3a",
-				"task_name": "app2 build",
-				"deadline": "2022-09-14T08:15:09.000Z",
-				"isCompletded": false
-			},
-			{
-				"task_id": "MagIv4DdKurPd9",
-				"task_name": "app3 build",
-				"deadline": "2022-09-14T08:25:09.000Z",
-				"isCompletded": false
-			},
-			{
-				"task_id": "qytOSB91IXTtsO",
-				"task_name": "adnan",
-				"deadline": "2022-09-14T10:25:09.000Z",
-				"isCompletded": false
+				"task_id": "FCWNSWCukOyWMi",
+				"task_name": "task5",
+				"deadline": "2022-09-19T20:45:13.000Z",
+				"isCompleted": false,
+				"reminders": [
+					"2022-09-19T18:39:43.519Z",
+					"2022-09-19T19:21:33.346Z",
+					"2022-09-19T20:03:23.173Z",
+					"2022-09-19T20:45:13.000Z"
+				]
 			}
-		]
-	},
-	{
-		"user_id": "bA0NsZ6gz2lw3EQd",
-		"firstname": "adnan",
-		"lastname": "ali",
-		"password": "$2b$12$PdH5wRV2hQaQttgcLzcYVuUTcJ61MQTLkLDQwn8Ls.v2/1vFl1CLO",
-		"address": "hyd",
-		"phone": "+917995498094",
-		"email": "adnan@gmail.com",
-		"tasks": []
-	},
-	{
-		"user_id": "MuzQhtWr9ablPnMf",
-		"firstname": "majid",
-		"lastname": "ali",
-		"password": "$2b$12$ssSF36aZbn/tm9PTtrxC2e/7cDRzFp1LLm3Lwm7otZUzpD7JZuYei",
-		"address": "hyd",
-		"phone": "+917695498094",
-		"email": "majid@gmail.com",
-		"tasks": []
+		],
+		"isVerified": { "phone": false, "email": false },
+		"verifyToken": {
+			"phoneToken": "JLwtxTWgdZl9fpFFwhfl",
+			"emailToken": "dIcallr4pkR8DIRokzMr"
+		}
 	}
 ]
