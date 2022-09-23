@@ -231,12 +231,10 @@ app.post("/api/task", async (req, res) => {
 
 		//Not Less than 30 mins and Not more than 30 Days
 		if (mins < 1 || days > 30) {
-			return res
-				.status(400)
-				.json({
-					error:
-						"Invalid Date Entered, Deadline Should be More than 30 mins and Less than 30 Days",
-				});
+			return res.status(400).json({
+				error:
+					"Invalid Date Entered, Deadline Should be More than 30 mins and Less than 30 Days",
+			});
 		}
 
 		//Get Reminders
@@ -413,15 +411,13 @@ app.get("/api/task/:task_id", async (req, res) => {
 
 app.put("/api/task/:task_id", async (req, res) => {
 	try {
-
-        let { new_task_name, new_deadline } = req.body;
+		let { new_task_name, new_deadline } = req.body;
 		if (!new_task_name || !new_deadline) {
 			return res.status(400).json({ error: "Some Fields are Missing" });
 		}
 
+		let task_id = req.params.task_id;
 
-        let task_id = req.params.task_id;
-	
 		let token = req.headers["auth-token"];
 		if (!token) {
 			return res.status(401).json({ error: "Unauthorised Access" });
@@ -432,7 +428,6 @@ app.put("/api/task/:task_id", async (req, res) => {
 			return res.status(401).json({ error: "Unauthorised Access" });
 		}
 
-
 		let fileData = await fs.readFile("data.json");
 		fileData = JSON.parse(fileData);
 
@@ -440,12 +435,12 @@ app.put("/api/task/:task_id", async (req, res) => {
 
 		let taskIndex = userFound.Tasks.find((ele) => ele.task_id == task_id);
 
-        if (taskIndex == -1) {
+		if (taskIndex == -1) {
 			return res.status(404).json({ error: "Task Not Found" });
-		}      
+		}
 		// console.log(taskIndex);
 
-        let utc_deadline = new Date(new_deadline);
+		let utc_deadline = new Date(new_deadline);
 
 		let present_time = new Date();
 
@@ -466,12 +461,10 @@ app.put("/api/task/:task_id", async (req, res) => {
 
 		//Not Less than 30 mins and Not more than 30 Days
 		if (mins < 1 || days > 30) {
-			return res
-				.status(400)
-				.json({
-					error:
-						"Invalid Date Entered, Deadline Should be More than 30 mins and Less than 30 Days",
-				});
+			return res.status(400).json({
+				error:
+					"Invalid Date Entered, Deadline Should be More than 30 mins and Less than 30 Days",
+			});
 		}
 
 		//Get Reminders
@@ -489,15 +482,14 @@ app.put("/api/task/:task_id", async (req, res) => {
 		reminders.push(reminder1, reminder2, reminder3, utc_deadline);
 		console.log(reminders);
 
+		taskIndex.task_id = task_id;
+		taskIndex.task_name = new_task_name;
+		taskIndex.deadline = new_deadline;
+		taskIndex.isCompleted = false;
+		taskIndex.deadline = utc_deadline;
+		taskIndex.reminders = reminders;
 
-        taskIndex.task_id = task_id;
-        taskIndex.task_name = new_task_name;
-        taskIndex.deadline = new_deadline;
-        taskIndex.isCompleted = false;
-        taskIndex.deadline = utc_deadline;
-        taskIndex.reminders = reminders
-      
-        taskIndex.reminders.forEach((ele, i) => {
+		taskIndex.reminders.forEach((ele, i) => {
 			// console.log(ele);
 			scheduleJob(`${task_id}_${i}`, ele, () => {
 				sendEmail({
@@ -516,12 +508,8 @@ app.put("/api/task/:task_id", async (req, res) => {
 			// console.log(i);
 		});
 
-        await fs.writeFile("data.json", JSON.stringify(fileData));
+		await fs.writeFile("data.json", JSON.stringify(fileData));
 		res.status(200).json({ success: "Task Was updated Successfully" });
-        
-
-	  
-
 	} catch (error) {
 		console.error(error);
 		return res.status(500).json({ error: "Internal Server Error" });
