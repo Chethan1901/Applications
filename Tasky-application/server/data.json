@@ -1,42 +1,33 @@
 [
 	{
-		"user_id": "gJqRAohsv2N7LDHj",
+		"user_id": "cnz2vKoEVK64YrQB",
 		"firstname": "Chethan",
 		"lastname": "reddy",
 		"email": "chethan13@gmail.com",
-		"password": "$2b$12$TOS36UBzlrrS3vO4uw4FtOeOOtM4zUz3QCEmbxZD3UDaJaIxbP1GK",
+		"password": "$2b$12$lqSJwlLUYXd9DB3u6gd50OO3ixbeOfGKtiEmHk7NJVnhqkKjdbJTW",
 		"address": "warangal",
 		"phone": "+917995489094",
 		"Tasks": [
 			{
-				"task_id": "ZlrIrbp475ZsaU",
-				"task_name": "qasim",
-				"deadline": "2022-09-22T09:45:13.000Z",
+				"task_id": "UrPjtLmNNa3mL4",
+				"task_name": "task1",
+				"deadline": "2022-10-01T09:30:00.000Z",
 				"isCompleted": false,
 				"reminders": [
-					"2022-09-22T08:29:03.886Z",
-					"2022-09-22T08:54:26.924Z",
-					"2022-09-22T09:19:49.962Z",
-					"2022-09-22T09:45:13.000Z"
-				]
-			},
-			{
-				"task_id": "FCWNSWCukOyWMi",
-				"task_name": "task5",
-				"deadline": "2022-09-19T20:45:13.000Z",
-				"isCompleted": false,
-				"reminders": [
-					"2022-09-19T18:39:43.519Z",
-					"2022-09-19T19:21:33.346Z",
-					"2022-09-19T20:03:23.173Z",
-					"2022-09-19T20:45:13.000Z"
+					"2022-10-01T07:49:48.682Z",
+					"2022-10-01T08:23:12.455Z",
+					"2022-10-01T08:56:36.227Z",
+					"2022-10-01T09:30:00.000Z"
 				]
 			}
 		],
-		"isVerified": { "phone": false, "email": false },
+		"isVerified": {
+			"phone": false,
+			"email": false
+		},
 		"verifyToken": {
-			"phoneToken": "JLwtxTWgdZl9fpFFwhfl",
-			"emailToken": "dIcallr4pkR8DIRokzMr"
+			"phoneToken": "b0XBUgEwIsDnq606AO51",
+			"emailToken": "0Baa4Fafzx29vfNQH0R9"
 		}
 	}
 ]
